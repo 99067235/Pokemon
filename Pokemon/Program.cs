@@ -1,6 +1,6 @@
 ﻿using Pokemon.Models;
 
-Character henk = new Character("henk", "henk", "fire", "water");
+Pokemon.Models.Pokemon henk = new Pokemon.Models.Pokemon("henk", "henk", "fire", "water");
 
 while (true)
 {
