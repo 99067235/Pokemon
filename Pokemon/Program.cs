@@ -1,7 +1,6 @@
 ﻿using Pokemon.Models;
 
-Pokemon.Models.Pokemon henk = new Pokemon.Models.Pokemon("henk", "henk", "fire", "water");
-
+Pokemon.Models.Pokemon pokemon = new Pokemon.Models.Pokemon();
 while (true)
 {
     Console.Write("Name: ");
@@ -11,8 +10,6 @@ while (true)
         break;
     } else
     {
-        henk.chosenName = chosenName;
-
         for (int i = 0; i < 10; i++)
         {
             Console.WriteLine(chosenName + '!');

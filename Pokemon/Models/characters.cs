@@ -4,10 +4,10 @@ namespace Pokemon.Models
 {
     public class Pokemon
     {
-        private String? defaultName;
-        private String? chosenName;
-        private String? strength;
-        private String? weakness;
+        public String? defaultName;
+        public String? chosenName;
+        public String? strength;
+        public String? weakness;
 
         public void changeName(bool RequiresInput = true, string? newName = null)
         {
