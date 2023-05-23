@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Pokemon.Models
 {
-    internal class pokeball
+    public class pokeball
     {
-        static void Main(string[] args)
+        public pokeball(Pokemon pokemon)
         {
-            string insidePokeball = "";
+            Console.WriteLine(pokemon);
         }
     }
 }

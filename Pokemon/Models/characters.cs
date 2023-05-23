@@ -27,7 +27,7 @@ namespace Pokemon.Models
 
         public string GetName()
         {
-            return this.chosenName;
+            return chosenName;
         }
 
         public override string ToString()
@@ -38,8 +38,11 @@ namespace Pokemon.Models
 
     public class Charmander : Pokemon
     {
-        public Charmander(string defaultName, string chosenName, string strength, string weakness)
+        public Charmander(string defaultName, string strength, string weakness)
         {
+            this.defaultName = defaultName;
+            this.strength = strength;
+            this.weakness = weakness;
         }
     }
 }
