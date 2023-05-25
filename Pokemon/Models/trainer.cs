@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pokemon.Models
+﻿namespace Pokemon.Models
 {
     public class Trainer
     {
@@ -24,7 +18,6 @@ namespace Pokemon.Models
             belt.Add(new pokeball(charmander4) { });
             belt.Add(new pokeball(charmander5) { });
             belt.Add(new pokeball(charmander6) { });
-            Console.WriteLine(belt);
         }
     }
 }

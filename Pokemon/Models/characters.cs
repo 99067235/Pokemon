@@ -1,11 +1,8 @@
-﻿using static System.Net.WebRequestMethods;
-
-namespace Pokemon.Models
+﻿namespace Pokemon.Models
 {
     public class Pokemon
     {
         public String? defaultName;
-        public String? chosenName;
         public String? strength;
         public String? weakness;
 
@@ -18,21 +15,16 @@ namespace Pokemon.Models
             }
             if (newName != null)
             {
-                this.chosenName = newName;
+                this.defaultName = newName;
             } else
             {
                 Console.WriteLine("Name has not been changed");
             }
         }
 
-        public string GetName()
-        {
-            return chosenName;
-        }
-
         public override string ToString()
         {
-            return $"DefaultName: {defaultName}, ChosenName: {chosenName}, Strength: {strength}, Weakness: {weakness}";
+            return $"DefaultName: {defaultName}, Strength: {strength}, Weakness: {weakness}";
         }
     }
 
