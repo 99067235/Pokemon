@@ -1,10 +1,10 @@
 ﻿using Pokemon.Models;
+#pragma warning disable CS8601
+#pragma warning disable CS8600
 
 Pokemon.Models.Pokemon pokemon = new Pokemon.Models.Pokemon();
-#pragma warning disable CS8600
 Trainer trainer1 = new();
 Trainer trainer2 = new();
-#pragma warning disable CS8601
 Console.Write("Name the first trainer: ");
 string trainerName1 = Console.ReadLine();
 trainer1.name = trainerName1;
