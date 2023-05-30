@@ -1,6 +1,6 @@
 ﻿namespace Pokemon.Models
 {
-    public class Pokemon
+    public abstract class Pokemon
     {
         public String? defaultName;
         public String? strength;
@@ -33,6 +33,26 @@
         public Charmander(string defaultName, string strength, string weakness)
         {
             this.defaultName = defaultName;
+            this.strength = strength;
+            this.weakness = weakness;
+        }
+    }
+
+    public class Squirtle : Pokemon
+    {
+        public Squirtle(string defaultName, string strength, string weakness)
+        {
+            this.defaultName = "Squirtle";
+            this.strength = strength;
+            this.weakness = weakness;
+        }
+    }
+
+    public class Bulbasaur : Pokemon
+    {
+        public Bulbasaur(string defaultName, string strength, string weakness)
+        {
+            this.defaultName = "Bulbasaur";
             this.strength = strength;
             this.weakness = weakness;
         }
