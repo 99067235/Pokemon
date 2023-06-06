@@ -22,14 +22,15 @@
             }
         }
 
-        public override string ToString()
-        {
-            return $"DefaultName: {defaultName}, Strength: {strength}, Weakness: {weakness}";
-        }
+        public abstract void BattleCry();
     }
 
     public class Charmander : Pokemon
     {
+        public override void BattleCry()
+        {
+            Console.WriteLine("\n*Charmander sounds*");
+        }
         public Charmander(string defaultName, string strength, string weakness)
         {
             this.defaultName = defaultName;
@@ -40,6 +41,10 @@
 
     public class Squirtle : Pokemon
     {
+        public override void BattleCry()
+        {
+            Console.WriteLine("\n*Squirtle sounds*");
+        }
         public Squirtle(string defaultName, string strength, string weakness)
         {
             this.defaultName = "Squirtle";
@@ -50,6 +55,10 @@
 
     public class Bulbasaur : Pokemon
     {
+        public override void BattleCry()
+        {
+            Console.WriteLine("\n*Bulbasaur sounds*");
+        }
         public Bulbasaur(string defaultName, string strength, string weakness)
         {
             this.defaultName = "Bulbasaur";

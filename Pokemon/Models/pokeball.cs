@@ -10,14 +10,8 @@
 
         public bool Use()
         {
-            Console.WriteLine("\n*BattleCry sounds*");
-            this.BattleCry();
+            this.pokemon.BattleCry();
             return true;
-        }
-
-        public void BattleCry()
-        {
-             Console.WriteLine(pokemon.defaultName + '!');
         }
     }
 }

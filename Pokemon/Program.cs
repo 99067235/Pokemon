@@ -2,7 +2,6 @@
 #pragma warning disable CS8601
 #pragma warning disable CS8600
 
-Pokemon.Models.Pokemon pokemon = new Pokemon.Models.Pokemon();
 Trainer trainer1 = new();
 Trainer trainer2 = new();
 Console.Write("Name the first trainer: ");
