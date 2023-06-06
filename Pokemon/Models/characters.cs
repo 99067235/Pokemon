@@ -2,9 +2,9 @@
 {
     public abstract class Pokemon
     {
-        public String? defaultName;
-        public String? strength;
-        public String? weakness;
+        protected String? defaultName;
+        protected String? strength;
+        protected String? weakness;
 
         public void changeName(bool RequiresInput = true, string? newName = null)
         {
