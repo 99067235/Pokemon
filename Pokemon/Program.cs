@@ -15,3 +15,13 @@ for (int i = 0; i < 6; i++)
     trainer1.belt[i].Use();
     trainer2.belt[i].Use();
 }
+while (true)
+{
+    var trainer1wins = 0;
+    var trainer2wins = 0;
+    var pokemontrainer1 = trainer1.getItem(trainer1wins);
+    var pokemontrainer2 = trainer2.getItem(trainer2wins);
+    var winner = Battle.StartBattle(trainer1, trainer2, pokemontrainer1, pokemontrainer2);
+    Console.WriteLine(winner.name + " is the winner!");
+    break;
+}

@@ -2,23 +2,18 @@
 {
     public abstract class Pokemon
     {
-        protected String? defaultName;
+        public String? defaultName;
         protected String? strength;
         protected String? weakness;
 
-        public void changeName(bool RequiresInput = true, string? newName = null)
+        public string getStrength()
         {
-            if (RequiresInput)
+            if (this.strength != null)
             {
-                Console.Write("Enter Name Here:");
-                newName = Console.ReadLine();
-            }
-            if (newName != null)
-            {
-                this.defaultName = newName;
+                return this.strength;
             } else
             {
-                Console.WriteLine("Name has not been changed");
+                return null;
             }
         }
 

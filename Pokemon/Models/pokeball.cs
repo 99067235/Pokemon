@@ -2,15 +2,25 @@
 {
     public class pokeball
     {
-        private Pokemon pokemon;
+        public Pokemon pokemon;
+        private bool pokemonInside;
         public pokeball(Pokemon pokemon)
         {
             this.pokemon = pokemon;
+            this.pokemonInside = true;
         }
 
         public bool Use()
         {
-            this.pokemon.BattleCry();
+            if (this.pokemonInside)
+            {
+                this.pokemonInside = false;
+                this.pokemon.BattleCry();
+            } else
+            {
+                Console.WriteLine(this.pokemon.defaultName + " went back to his pokeball");
+                this.pokemonInside = true;
+            }
             return true;
         }
     }
