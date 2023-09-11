@@ -2,26 +2,45 @@
 {
     public class pokeball
     {
+        public bool pokemonInPokeball { get; set; }
+        public bool PokemonReleased { get; set; }
         public Pokemon pokemon;
-        private bool pokemonInside;
-        public pokeball(Pokemon pokemon)
+        private Pokemon pokemonInside;
+        public pokeball(Pokemon? pokemon = null)
         {
             this.pokemon = pokemon;
-            this.pokemonInside = true;
+            this.pokemonInside = pokemon;
         }
 
-        public bool Use()
+        public Pokemon? Use(Trainer trainer)
         {
-            if (this.pokemonInside)
+            if (trainer.pokemonInUse)
             {
-                this.pokemonInside = false;
-                this.pokemon.BattleCry();
-            } else
-            {
-                Console.WriteLine(this.pokemon.defaultName + " went back to his pokeball");
-                this.pokemonInside = true;
+                if (trainer.ReleasedPokemon != null && trainer.pokemonInUse)
+                {
+                    if (trainer.ReleasedPokemon != this.pokemonInside)
+                    {
+                        return null;
+                    }
+                }
             }
-            return true;
+
+            if (!pokemonInPokeball)
+            {
+                this.PokemonReleased = true;
+                trainer.ReleasedPokemon = this.pokemonInside;
+                trainer.pokemonInUse = true;
+                Console.WriteLine($"\n{trainer.name} summoned {this.pokemonInside.givenName}");
+                this.pokemonInside.BattleCry();
+            }
+            else
+            {
+                this.pokemonInPokeball = false;
+                trainer.ReleasedPokemon = null;
+                trainer.pokemonInUse = false;
+                Console.WriteLine($"\n{trainer.name} retreated {this.pokemonInside.givenName}");
+            }
+            return this.pokemonInside;
         }
     }
 }

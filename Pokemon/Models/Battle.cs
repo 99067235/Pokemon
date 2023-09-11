@@ -4,16 +4,33 @@ namespace Pokemon.Models
 {
     internal class Battle
     {
-        public static Trainer StartBattle(Trainer trainer1, Trainer trainer2, pokeball pokemontrainer1, pokeball pokemontrainer2)
+        public static Trainer StartBattle(Trainer trainer1, Trainer trainer2, pokeball pokeballTrainer1, pokeball pokeballTrainer2)
         {
-            var pokemon1strength = pokemontrainer1.pokemon.getStrength();
-            var pokemon2strength = pokemontrainer2.pokemon.getStrength();
-            if (pokemon1strength == "fire" && pokemon2strength == "grass")
+            if (trainer1 == null || trainer2 == null)
             {
-                Trainer winner = trainer1;
-                return winner;
+                return null;
             }
-            return null;
+            Pokemon? pokemonTrainer1 = pokeballTrainer1.Use(trainer1);
+            Pokemon? pokemonTrainer2 = pokeballTrainer2.Use(trainer2);
+            if (pokeballTrainer1 == null || pokemonTrainer2 == null)
+            {
+                return null;
+            }
+            else
+            {
+                bool? trainer1HasWon = pokemonTrainer1.Versus(pokemonTrainer2);
+                if (trainer1HasWon == true)
+                {
+                    return trainer1;
+                } else if (trainer1HasWon == false)
+                {
+                    return trainer2;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
     }
 }
