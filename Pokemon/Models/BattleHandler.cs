@@ -8,79 +8,73 @@ namespace Pokemon.Models
 {
     public abstract class BattleHandler
     {
-        public abstract bool? Versus(string EnemyType);
+        public abstract bool? Versus(string enemy_type);
     }
     public class Fire : BattleHandler
     {
-        public override bool? Versus(string EnemyType)
+        public override bool? Versus(string enemy_type)
         {
-            if (EnemyType is "Water")
+            if (enemy_type is "Water")
             {
                 return false;
             }
-            else if (EnemyType is "Grass")
+            else if (enemy_type is "Grass")
             {
                 return true;
             }
-            else if (EnemyType is "Fire")
+            else if (enemy_type is "Fire")
             {
                 return null;
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("ERROR: Enemy does not have a valid type, attack has been canceled.");
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Attack failed: No valid type.");
                 return false;
             }
         }
     }
     public class Grass : BattleHandler
     {
-        public override bool? Versus(string EnemyType)
+        public override bool? Versus(string enemy_type)
         {
-            if (EnemyType is "Water")
+            if (enemy_type is "Water")
             {
                 return true;
             }
-            else if (EnemyType is "Grass")
+            else if (enemy_type is "Grass")
             {
                 return null;
             }
-            else if (EnemyType is "Fire")
+            else if (enemy_type is "Fire")
             {
                 return false;
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("ERROR: Enemy does not have a valid type, attack has been canceled.");
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Attack failed: No valid type.");
                 return false;
             }
         }
     }
     public class Water : BattleHandler
     {
-        public override bool? Versus(string EnemyType)
+        public override bool? Versus(string enemy_type)
         {
-            if (EnemyType is "Water")
+            if (enemy_type is "Water")
             {
                 return null;
             }
-            else if (EnemyType is "Grass")
+            else if (enemy_type is "Grass")
             {
                 return false;
             }
-            else if (EnemyType is "Fire")
+            else if (enemy_type is "Fire")
             {
                 return true;
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("ERROR: Enemy does not have a valid type, attack has been canceled.");
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Attack failed: No valid type.");
                 return false;
             }
         }
