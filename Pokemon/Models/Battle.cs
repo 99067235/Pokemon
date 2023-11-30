@@ -2,7 +2,7 @@
 
 namespace Pokemon.Models
 {
-    internal class Battle
+    sealed class Battle
     {
         public static Trainer StartBattle(Trainer trainer1, Trainer trainer2, pokeball pokeballTrainer1, pokeball pokeballTrainer2)
         {

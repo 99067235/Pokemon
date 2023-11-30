@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pokemon.Models
 {
-    public class Belt
+    public sealed class Belt
     {
         private List<pokeball> belt = new();
         public string trainerName;
