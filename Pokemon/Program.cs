@@ -43,7 +43,7 @@ internal partial class Program
         {
             for (var i = 0; i < 6; i++)
             {
-                trainer2.belt.add(trainer2.belt.makePokeball(new Charmander(false)));
+                trainer2.belt.add(trainer2.belt.makePokeball(new Charmander()));
             }
         }
         // Start the battle

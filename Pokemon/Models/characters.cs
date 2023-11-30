@@ -4,17 +4,18 @@
     {
         public String? defaultName;
         public string? givenName;
-        protected String? strength;
-        protected String? weakness;
+        protected readonly String? strength;
+        protected readonly String? weakness;
         public bool useable;
         public string type;
-        public BattleHandler batteHandler;
+        public readonly BattleHandler batteHandler;
         public Pokemon(bool wantsToName = true, string? DefaultName = "NoGivenName")
         {
             if (wantsToName)
             {
                 this.giveName();
             }
+
             else
             {
                 this.giveName(false, defaultName);

@@ -9,7 +9,6 @@ namespace Pokemon.Models
     public class Belt
     {
         private List<pokeball> belt = new();
-        public Trainer trainer;
         public string trainerName;
         public pokeball GetItemFromPokeball(int id)
         {
