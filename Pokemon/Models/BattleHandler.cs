@@ -28,9 +28,6 @@ namespace Pokemon.Models
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("ERROR: Enemy does not have a valid type, attack has been canceled.");
-                Console.ForegroundColor = ConsoleColor.White;
                 return false;
             }
         }
@@ -53,9 +50,6 @@ namespace Pokemon.Models
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("ERROR: Enemy does not have a valid type, attack has been canceled.");
-                Console.ForegroundColor = ConsoleColor.White;
                 return false;
             }
         }
@@ -78,9 +72,6 @@ namespace Pokemon.Models
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("ERROR: Enemy does not have a valid type, attack has been canceled.");
-                Console.ForegroundColor = ConsoleColor.White;
                 return false;
             }
         }
