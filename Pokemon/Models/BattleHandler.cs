@@ -6,74 +6,63 @@ using System.Threading.Tasks;
 
 namespace Pokemon.Models
 {
+    public enum PokemonTypes {
+        Fire,
+        Grass,
+        Water
+    }
     public abstract class BattleHandler
     {
-        public abstract bool? Versus(string EnemyType);
-    }
-    public class Fire : BattleHandler
-    {
-        public override bool? Versus(string EnemyType)
+        public bool? Versus(PokemonTypes type, PokemonTypes EnemyType)
         {
-            if (EnemyType is "Water")
+            if (type == PokemonTypes.Fire)
             {
-                return false;
+                if (EnemyType == PokemonTypes.Grass)
+                {
+                    return true;
+                }
+                if (EnemyType == PokemonTypes.Fire)
+                {
+                    return null;
+                }
+                if (EnemyType == PokemonTypes.Water)
+                {
+                    return false;
+                }
             }
-            else if (EnemyType is "Grass")
+
+            if (type == PokemonTypes.Water)
             {
-                return true;
+                if (EnemyType == PokemonTypes.Fire)
+                {
+                    return true;
+                }
+                if (EnemyType == PokemonTypes.Water)
+                {
+                    return null;
+                }
+                if (EnemyType == PokemonTypes.Grass)
+                {
+                    return false;
+                }
             }
-            else if (EnemyType is "Fire")
+
+            if (type == PokemonTypes.Grass)
             {
-                return null;
+                if (EnemyType == PokemonTypes.Water)
+                {
+                    return true;
+                }
+                if (EnemyType == PokemonTypes.Grass)
+                {
+                    return null;
+                }
+                if (EnemyType == PokemonTypes.Fire)
+                {
+                    return false;
+                }
             }
-            else
-            {
-                return false;
-            }
-        }
-    }
-    public class Grass : BattleHandler
-    {
-        public override bool? Versus(string EnemyType)
-        {
-            if (EnemyType is "Water")
-            {
-                return true;
-            }
-            else if (EnemyType is "Grass")
-            {
-                return null;
-            }
-            else if (EnemyType is "Fire")
-            {
-                return false;
-            }
-            else
-            {
-                return false;
-            }
-        }
-    }
-    public class Water : BattleHandler
-    {
-        public override bool? Versus(string EnemyType)
-        {
-            if (EnemyType is "Water")
-            {
-                return null;
-            }
-            else if (EnemyType is "Grass")
-            {
-                return false;
-            }
-            else if (EnemyType is "Fire")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return false;
         }
     }
 }

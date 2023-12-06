@@ -7,9 +7,9 @@
         protected readonly String? strength;
         protected readonly String? weakness;
         public bool useable;
-        public string type;
+        public PokemonTypes type;
         public readonly BattleHandler batteHandler;
-        public Pokemon(bool wantsToName = true, string? DefaultName = "NoGivenName")
+        public Pokemon(bool wantsToName = true)
         {
             if (wantsToName)
             {
@@ -20,7 +20,7 @@
             {
                 this.giveName(false, defaultName);
             }
-            this.type = "Fire";
+            this.type = PokemonTypes.Fire;
         }
         public void giveName(bool wantsToName = true, string? givenName = null)
         {
@@ -53,7 +53,9 @@
             var enemyType = pokemon.type;
             if (enemyType != null && this.type != null)
             {
-                bool? result = this.batteHandler.Versus(enemyType);
+                Console.WriteLine(this.type);
+                Console.WriteLine(enemyType);
+                bool? result = this.batteHandler.Versus(this.type, enemyType);
                 return result;
             }
             Console.WriteLine("An error has occurred.");
@@ -82,7 +84,7 @@
         }
         public Charmander(bool wantsToName = true, string ? defaultName = "Charmander"): base(wantsToName)
         {
-            this.type = "Fire";
+            this.type = PokemonTypes.Fire;
             this.defaultName = defaultName;
         }
     }
@@ -96,7 +98,7 @@
         public Squirtle(bool wantsToName = true, string ? defaultName = "Squirtle"): base(wantsToName)
         {
             this.defaultName = defaultName;
-            this.type = "Water";
+            this.type = PokemonTypes.Water;
         }
     }
 
@@ -109,7 +111,7 @@
         public Bulbasaur(bool wantsToName = true, string defaultName = "Bulbasaur"): base(wantsToName)
         {
             this.defaultName = defaultName;
-            this.type = "Grass";
+            this.type = PokemonTypes.Grass;
         }
     }
 }
