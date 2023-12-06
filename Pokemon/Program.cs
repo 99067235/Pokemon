@@ -31,8 +31,8 @@ internal partial class Program
         Trainer trainer2 = new Trainer(nameTrainer2, beltTrainer1);
         beltTrainer2.trainerName = nameTrainer2;
         Console.Write("Give the pokemon a name? y/n");
-        answer = Console.ReadLine();
-        if (answer == "y")
+        var answerTrainer2 = Console.ReadLine();
+        if (answerTrainer2 == "y")
         {
             for (var i = 0; i < 6; i++)
             {
@@ -43,7 +43,7 @@ internal partial class Program
         {
             for (var i = 0; i < 6; i++)
             {
-                trainer2.belt.add(trainer2.belt.makePokeball(new Charmander()));
+                trainer2.belt.add(trainer2.belt.makePokeball(new Charmander(false)));
             }
         }
         Battle.HandleBattle(trainer1, trainer2);

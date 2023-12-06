@@ -53,8 +53,6 @@
             var enemyType = pokemon.type;
             if (enemyType != null && this.type != null)
             {
-                Console.WriteLine(this.type);
-                Console.WriteLine(enemyType);
                 bool? result = this.batteHandler.Versus(this.type, enemyType);
                 return result;
             }
