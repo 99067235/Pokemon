@@ -40,7 +40,6 @@ namespace Pokemon.Models
             int ties = 0;
             while (trainer1.belt.getBeltLength() > 0 && trainer2.belt.getBeltLength() > 0)
             {
-                Console.WriteLine(trainer1.belt.getBeltLength() > 0 && trainer2.belt.getBeltLength() > 0);
                 try
                 {
                     var pokeballTrainer1 = trainer1.belt.getItemFromBelt(winsTrainer1);

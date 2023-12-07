@@ -8,7 +8,7 @@
         public Pokemon? ReleasedPokemon;
 
         public Trainer(string name, Belt belt) {
-            name = name;
+            this.name = name;
             this.belt = belt;
         }
     }
