@@ -48,12 +48,11 @@
             }
         }
 
-        public bool? Versus(Pokemon pokemon)
+        public bool? Versus(PokemonTypes enemyType, PokemonTypes type)
         {
-            var enemyType = pokemon.type;
             if (enemyType != null && this.type != null)
             {
-                var result = BattleHandler.Versus(this.type, enemyType);
+                var result = BattleHandler.Versus(type, enemyType);
                 return result;
             }
             Console.WriteLine("An error has occurred.");

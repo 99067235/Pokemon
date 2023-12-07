@@ -12,29 +12,22 @@ namespace Pokemon.Models
             }
             Pokemon? pokemonTrainer1 = pokeballTrainer1.Use(trainer1);
             Pokemon? pokemonTrainer2 = pokeballTrainer2.Use(trainer2);
-//            if (pokemonTrainer1 == null || pokemonTrainer2 == null)
-//            {
-//                return null;
-//            }
-//            else
-//            {
-                bool? trainer1HasWon = pokemonTrainer1.Versus(pokemonTrainer2);
-                if (trainer1HasWon == true)
-                {
-                    trainer1.belt.RemovePokeball(pokeballTrainer1);
-                    return trainer1;
-                } else if (trainer1HasWon == false)
-                {
-                    trainer2.belt.RemovePokeball(pokeballTrainer2);
-                    return trainer2;
-                }
-                else
-                {
-                    trainer1.belt.RemovePokeball(pokeballTrainer1);
-                    trainer2.belt.RemovePokeball(pokeballTrainer2);
-                    return null;
-                }
-//            }
+            bool? trainer1HasWon = pokemonTrainer1.Versus(pokemonTrainer1.type, pokemonTrainer2.type);
+            if (trainer1HasWon == true)
+            {
+                trainer1.belt.RemovePokeball(pokeballTrainer1);
+                return trainer1;
+            } else if (trainer1HasWon == false)
+            {
+                trainer2.belt.RemovePokeball(pokeballTrainer2);
+                return trainer2;
+            }
+            else
+            {
+                trainer1.belt.RemovePokeball(pokeballTrainer1);
+                trainer2.belt.RemovePokeball(pokeballTrainer2);
+                return null;
+            }
         }
 
         public static void HandleBattle(Trainer trainer1, Trainer trainer2)
@@ -45,8 +38,9 @@ namespace Pokemon.Models
             int winsTrainer2 = 0;
             // Define a variable to keep track of how many ties there are played
             int ties = 0;
-            while (true)
+            while (trainer1.belt.getBeltLength() > 0 && trainer2.belt.getBeltLength() > 0)
             {
+                Console.WriteLine(trainer1.belt.getBeltLength() > 0 && trainer2.belt.getBeltLength() > 0);
                 try
                 {
                     var pokeballTrainer1 = trainer1.belt.getItemFromBelt(winsTrainer1);
