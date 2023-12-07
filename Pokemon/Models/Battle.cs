@@ -12,31 +12,35 @@ namespace Pokemon.Models
             }
             Pokemon? pokemonTrainer1 = pokeballTrainer1.Use(trainer1);
             Pokemon? pokemonTrainer2 = pokeballTrainer2.Use(trainer2);
-            if (pokeballTrainer1 == null || pokemonTrainer2 == null)
-            {
-                return null;
-            }
-            else
-            {
+//            if (pokemonTrainer1 == null || pokemonTrainer2 == null)
+//            {
+//                return null;
+//            }
+//            else
+//            {
                 bool? trainer1HasWon = pokemonTrainer1.Versus(pokemonTrainer2);
                 if (trainer1HasWon == true)
                 {
+                    trainer1.belt.RemovePokeball(pokeballTrainer1);
                     return trainer1;
                 } else if (trainer1HasWon == false)
                 {
+                    trainer2.belt.RemovePokeball(pokeballTrainer2);
                     return trainer2;
                 }
                 else
                 {
+                    trainer1.belt.RemovePokeball(pokeballTrainer1);
+                    trainer2.belt.RemovePokeball(pokeballTrainer2);
                     return null;
                 }
-            }
+//            }
         }
 
         public static void HandleBattle(Trainer trainer1, Trainer trainer2)
         {
             // Start the battle
-            // Define the variables which keep track of the amount of wins
+            // Define the variables to keep track of the amount of wins
             int winsTrainer1 = 0;
             int winsTrainer2 = 0;
             // Define a variable to keep track of how many ties there are played
@@ -45,9 +49,9 @@ namespace Pokemon.Models
             {
                 try
                 {
-                    var trainer1Pokemon = trainer1.belt.getItemFromBelt(winsTrainer1);
-                    var trainer2Pokemon = trainer2.belt.getItemFromBelt(winsTrainer2);
-                    Trainer winner = StartBattle(trainer1, trainer2, trainer1Pokemon, trainer2Pokemon);
+                    var pokeballTrainer1 = trainer1.belt.getItemFromBelt(winsTrainer1);
+                    var pokeballTrainer2 = trainer2.belt.getItemFromBelt(winsTrainer2);
+                    Trainer winner = StartBattle(trainer1, trainer2, pokeballTrainer1, pokeballTrainer2);
                     if (winner != null)
                     {
                         if (winner == trainer1)

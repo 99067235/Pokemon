@@ -13,7 +13,7 @@ namespace Pokemon.Models
     }
     public abstract class BattleHandler
     {
-        public bool? Versus(PokemonTypes type, PokemonTypes EnemyType)
+        public static bool? Versus(PokemonTypes type, PokemonTypes EnemyType)
         {
             if (type == PokemonTypes.Fire)
             {

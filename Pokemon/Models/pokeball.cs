@@ -14,17 +14,6 @@
 
         public Pokemon? Use(Trainer trainer)
         {
-            if (trainer.pokemonInUse)
-            {
-                if (trainer.ReleasedPokemon != null && trainer.pokemonInUse)
-                {
-                    if (trainer.ReleasedPokemon != this.pokemonInside)
-                    {
-                        return null;
-                    }
-                }
-            }
-
             if (!pokemonInPokeball)
             {
                 this.PokemonReleased = true;

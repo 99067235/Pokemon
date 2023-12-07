@@ -53,7 +53,7 @@
             var enemyType = pokemon.type;
             if (enemyType != null && this.type != null)
             {
-                bool? result = this.batteHandler.Versus(this.type, enemyType);
+                var result = BattleHandler.Versus(this.type, enemyType);
                 return result;
             }
             Console.WriteLine("An error has occurred.");

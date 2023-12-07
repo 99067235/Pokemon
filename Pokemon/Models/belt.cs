@@ -25,6 +25,11 @@ namespace Pokemon.Models
             return belt[index];
         }
 
+        public int getBeltLength()
+        {
+            return this.belt.Count;
+        }
+
         public pokeball makePokeball(Pokemon? pokemon = null)
         {
             if (pokemon != null)
@@ -36,6 +41,11 @@ namespace Pokemon.Models
                 pokeball pokeball = new();
                 return pokeball;
             }
+        }
+
+        public void RemovePokeball(pokeball pokeball)
+        {
+            belt.Remove(pokeball);
         }
     }
 }
