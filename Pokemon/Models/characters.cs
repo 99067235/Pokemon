@@ -50,12 +50,19 @@
 
         public bool? Versus(PokemonTypes enemyType, PokemonTypes type)
         {
+<<<<<<< HEAD
             if (enemyType != null && this.type != null)
             {
                 var result = BattleHandler.Versus(type, enemyType);
+=======
+            var enemy_type = pokemon.type;
+            if (enemy_type != null && this.type != null)
+            {
+                bool? result = this.batteHandler.Versus(enemy_type);
+>>>>>>> d172fd425a27832e725536cba367780879d8f6d0
                 return result;
             }
-            Console.WriteLine("An error has occurred.");
+            Console.WriteLine("Oh no, an error has occurred.");
             return null;
         }
 
@@ -77,7 +84,7 @@
     {
         public override void BattleCry()
         {
-            Console.WriteLine("\n*Charmander sounds*");
+            Console.WriteLine("\n*Charmander battlecry sounds*");
         }
         public Charmander(bool wantsToName = true, string ? defaultName = "Charmander"): base(wantsToName)
         {
@@ -90,7 +97,7 @@
     {
         public override void BattleCry()
         {
-            Console.WriteLine("\n*Squirtle sounds*");
+            Console.WriteLine("\n*Squirtle battlecry sounds*");
         }
         public Squirtle(bool wantsToName = true, string ? defaultName = "Squirtle"): base(wantsToName)
         {
@@ -103,7 +110,7 @@
     {
         public override void BattleCry()
         {
-            Console.WriteLine("\n*Bulbasaur sounds*");
+            Console.WriteLine("\n*Bulbasaur battlecry sounds*");
         }
         public Bulbasaur(bool wantsToName = true, string defaultName = "Bulbasaur"): base(wantsToName)
         {

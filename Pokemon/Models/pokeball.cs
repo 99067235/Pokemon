@@ -19,7 +19,7 @@
                 this.PokemonReleased = true;
                 trainer.ReleasedPokemon = this.pokemonInside;
                 trainer.pokemonInUse = true;
-                Console.WriteLine($"\n{trainer.name} summoned {this.pokemonInside.givenName}");
+                Console.WriteLine(trainer.name + " has called " + this.pokemonInside.givenName);
                 this.pokemonInside.BattleCry();
             }
             else
@@ -27,7 +27,7 @@
                 this.pokemonInPokeball = false;
                 trainer.ReleasedPokemon = null;
                 trainer.pokemonInUse = false;
-                Console.WriteLine($"\n{trainer.name} retreated {this.pokemonInside.givenName}");
+                Console.WriteLine(trainer.name + " has retreated " + this.pokemonInside.givenName);
             }
             return this.pokemonInside;
         }
