@@ -17,7 +17,14 @@ namespace Pokemon.Models
 
         public void add(pokeball pokeball)
         {
-            belt.Add(pokeball);
+            Console.WriteLine(belt.Count);
+            if (belt.Count > 6)
+            {
+                throw new InvalidOperationException("Cannot add more than 6 pokeballs to the belt.");
+            } else
+            {
+                belt.Add(pokeball);
+            }
         }
 
         public pokeball getItemFromBelt(int index)
