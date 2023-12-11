@@ -2,8 +2,8 @@
 {
     public class pokeball
     {
-        private bool pokemonInPokeball { get; set; }
-        private bool PokemonReleased { get; set; }
+        private bool pokemonInPokeball;
+        private bool PokemonReleased;
         private Pokemon pokemon;
         private Pokemon pokemonInside;
         public pokeball(Pokemon? pokemon = null)
