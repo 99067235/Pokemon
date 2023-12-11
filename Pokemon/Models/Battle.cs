@@ -98,8 +98,9 @@ namespace Pokemon.Models
                         ties++;
                     }
                 }
-                catch
+                catch (Exception e)
                 {
+                    Console.WriteLine(e);
                     break;
                 }
             }
